@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
 import SearchBar from './components/search_bar';
+import VideoList from './components/video_list';
 
 const API_KEY = 'AIzaSyDYomOy8E018K4w5b5UxDQoImpGecVm5H4';
 
@@ -11,7 +12,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     
-    this.state = { };
+    this.state = { videos: [] };
 
     // YouTube search using key and search term
     YTSearch({ key: API_KEY, term: 'corsair' }, (videos) => {
@@ -25,6 +26,8 @@ class App extends Component {
     return (
       <div>
         <SearchBar />
+        {/* passing data or props to VideoList */}
+        <VideoList videos={this.state.videos}/>
       </div>
     )
   }
