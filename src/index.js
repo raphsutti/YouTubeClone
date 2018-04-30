@@ -11,17 +11,18 @@ class App extends Component {
   // Constructor function to update state when user input search
   constructor(props) {
     super(props);
-    
+    // Initial state of blank videos array
     this.state = { videos: [] };
 
     // YouTube search using key and search term
     YTSearch({ key: API_KEY, term: 'corsair' }, (videos) => {
       // when key and value identical ie. videos: videos can condensed
       // below same as this.setState({ videos: videos });
+      // Set state array videos to videos
       this.setState({ videos });
     });
   }
-
+  // Render page with SearchBar and VideoList component
   render() {
     return (
       <div>

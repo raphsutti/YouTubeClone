@@ -4,7 +4,7 @@ class SearchBar extends Component {
   // state setup
   constructor(props) {
     super(props);
-    // outside constructor, use this.setState
+    // outside constructor, use this.setState inside constructor use this.state
     this.state = { term: '' };
   }
 
@@ -12,7 +12,7 @@ class SearchBar extends Component {
     // value set to current state
     // update 'term' state with user input using this.setState
     // causes re-render and value updated
-    // show value using this.state
+    // show value using this.state in <input />
     return (
       <div>
         <input 
