@@ -1,9 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import YTSearch from 'youtube-api-search';
 
 import SearchBar from './components/search_bar';
 
 const API_KEY = 'AIzaSyDYomOy8E018K4w5b5UxDQoImpGecVm5H4';
+
+// YouTube search using key and search term
+YTSearch({key: API_KEY, term: 'corsair'}, function(data) {
+  console.log(data);
+});
 
 // Create new component. This component should produce HTML
 const App = () => {
