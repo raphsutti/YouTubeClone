@@ -1,3 +1,4 @@
+// From video list, create list item for each videos
 import React from 'react';
 
 // test return of VideoListItem
