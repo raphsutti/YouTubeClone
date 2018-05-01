@@ -16,10 +16,15 @@ class App extends Component {
     this.state = { 
       videos: [],
       selectedVideo: null 
-    };
+    }; 
 
+    this.videoSearch('Corsair');
+  }
+
+  // call back for search
+  videoSearch(term) {
     // YouTube search using key and search term
-    YTSearch({ key: API_KEY, term: 'corsair' }, (videos) => {
+    YTSearch({ key: API_KEY, term: term}, (videos) => {
       // when key and value identical ie. videos: videos can condensed
       // below same as this.setState({ videos: videos });
       // Set state array videos to videos
@@ -29,11 +34,12 @@ class App extends Component {
       });
     });
   }
+
   // Render page with SearchBar and VideoList component
   render() {
     return (
       <div>
-        <SearchBar />
+        <SearchBar onSearchTermChange={term => this.videoSearch(term)} />
         <VideoDetail video={this.state.selectedVideo} />
         {/* passing data or props to VideoList */}
         <VideoList 
