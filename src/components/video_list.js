@@ -7,7 +7,12 @@ const VideoList = (props) => {
   // Cycle through videos array and store into videoItems
   const videoItems = props.videos.map((video) => {
     // passed in video as property video
-    return <VideoListItem key={video.etag} video={video} />
+    return (
+    <VideoListItem 
+      onVideoSelect={props.onVideoSelect}
+      key={video.etag} 
+      video={video} />
+    )
   })
 
   // display videoItems in a list

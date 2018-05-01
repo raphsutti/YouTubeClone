@@ -12,15 +12,21 @@ class App extends Component {
   // Constructor function to update state when user input search
   constructor(props) {
     super(props);
-    // Initial state of blank videos array
-    this.state = { videos: [] };
+    // Initial state of blank videos array and selected video
+    this.state = { 
+      videos: [],
+      selectedVideo: null 
+    };
 
     // YouTube search using key and search term
     YTSearch({ key: API_KEY, term: 'corsair' }, (videos) => {
       // when key and value identical ie. videos: videos can condensed
       // below same as this.setState({ videos: videos });
       // Set state array videos to videos
-      this.setState({ videos });
+      this.setState({ 
+        videos:videos,
+        selectedVideo: videos[0]
+      });
     });
   }
   // Render page with SearchBar and VideoList component
@@ -28,9 +34,11 @@ class App extends Component {
     return (
       <div>
         <SearchBar />
-        <VideoDetail video={this.state.videos[0]} />
+        <VideoDetail video={this.state.selectedVideo} />
         {/* passing data or props to VideoList */}
-        <VideoList videos={this.state.videos}/>
+        <VideoList 
+          onVideoSelect={selectedVideo => this.setState({selectedVideo}) }
+          videos={this.state.videos}/>
       </div>
     )
   }

@@ -4,12 +4,11 @@ import React from 'react';
 // test return of VideoListItem
 // {video} is the same as
 // const video = props.video
-const VideoListItem = ({video}) => {
-  // console.log(video)
+const VideoListItem = ({video, onVideoSelect}) => {
   // save url from current video object
   const imageUrl = video.snippet.thumbnails.default.url
   return (
-  <li className="list-group-item">
+  <li onClick={() => onVideoSelect(video)} className="list-group-item">
     <div className="video-list media">
       
       <div className="media-left">
