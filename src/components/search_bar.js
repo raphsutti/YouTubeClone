@@ -14,11 +14,11 @@ class SearchBar extends Component {
     // causes re-render and value updated
     // show value using this.state in <input />
     return (
-      <div>
+      <div className="search-bar">
         <input 
           value={this.state.term}
           onChange={event => this.setState({ term: event.target.value }) }/>
-        Value of the input: { this.state.term }
+        {/* Value of the input: { this.state.term } */}
       </div>
     );
   }
