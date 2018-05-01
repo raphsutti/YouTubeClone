@@ -6,6 +6,7 @@ import VideoListItem from './video_list_item';
 const VideoList = (props) => {
   // Cycle through videos array and store into videoItems
   const videoItems = props.videos.map((video) => {
+    // passed in video as property video
     return <VideoListItem key={video.etag} video={video} />
   })
 
