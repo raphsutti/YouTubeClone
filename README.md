@@ -9,4 +9,4 @@ Video detail
 video list
 video list item
 
-<img src="./screenshot.png" width="350"/>
+![Screenshot](screenshot.png)
