@@ -9,4 +9,4 @@ Video detail
 video list
 video list item
 
-![Screenshot](screenshot.png)
+![Screenshot](screenshot.PNG)
